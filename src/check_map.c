@@ -6,36 +6,23 @@
 /*   By: mpons <marvin@42lausanne.ch>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 09:59:37 by mpons             #+#    #+#             */
-/*   Updated: 2021/12/31 16:28:24 by mpons            ###   ########.fr       */
+/*   Updated: 2022/01/03 20:26:41 by mpons            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../inc/so_long.h"
 
-void	check_wall_fin(t_map *m)
+void	print_error_exit(char *s)
 {
-	int	z;
-	int	j;
-
-	z = m->q_line - 1;
-	j = 0;
-	while (m->map[z][j])
-	{
-		if (m->map[z][j] != '1')
-		{
-			free(m->map);
-			wall_error();
-		}
-		j++;
-	}
+	ft_putendl_fd(s, 2);
+	exit (1);
 }
 
 void	check_char_and_count(char c, t_map *m)
 {
 	if (c != 'P' && c != 'E' && c != 'C' && c != '1' && c != '0')
 	{
-		ft_putendl_fd("Error\nWrong char", 2);
 		free(m->map);
-		exit (1);
+		print_error_exit("Error\nWrong char");
 	}
 	if (c == 'P')
 		m->p_chk++;
@@ -63,6 +50,24 @@ void	check_errors(t_map *m)
 			ft_putendl_fd("Squarre map", 2);
 		free(m->map);
 		exit (1);
+	}
+}
+
+void	check_wall_fin(t_map *m)
+{
+	int	z;
+	int	j;
+
+	z = m->q_line - 1;
+	j = 0;
+	while (m->map[z][j])
+	{
+		if (m->map[z][j] != '1')
+		{
+			free(m->map);
+			print_error_exit("Error\nExternal wall is not closed");
+		}
+		j++;
 	}
 }
 

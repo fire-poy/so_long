@@ -6,7 +6,7 @@
 /*   By: mpons <marvin@42lausanne.ch>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 10:27:34 by mpons             #+#    #+#             */
-/*   Updated: 2021/12/31 16:24:19 by mpons            ###   ########.fr       */
+/*   Updated: 2022/01/03 20:38:14 by mpons            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef SO_LONG_H
@@ -27,7 +27,6 @@ typedef struct s_map
 	int		fd;
 	int		len_line;
 	int		q_line;
-	int		end_line;
 	int		p_chk;
 	int		e_chk;
 	int		c_chk;
@@ -60,12 +59,9 @@ typedef struct s_game
 	void	*img_r;
 }	t_game;
 
-void	vide_error(void);
-void	wall_error(void);
-void	wall_error2(void);
-void	line_len_error(void);
+void	print_error_exit(char *s);
 void	ft_read_map(t_map *m);
-int		check_wall(char *l);
+void	check_wall(char *l);
 void	check_map(t_map *m);
 void	init_game(t_map *m, t_game *g);
 void	print_map(t_map *m, t_game *g);

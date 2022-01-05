@@ -6,7 +6,7 @@
 #    By: mpons <marvin@42lausanne.ch>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/23 17:30:16 by mpons             #+#    #+#              #
-#    Updated: 2021/12/31 16:34:45 by mpons            ###   ########.fr        #
+#    Updated: 2022/01/03 20:38:25 by mpons            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,6 @@ MLX_DIR		= ./mlx
 SRC 		= ./src/so_long.c\
 			  ./src/read_map.c\
 			  ./src/check_map.c\
-		  	  ./src/errors.c\
 			  ./src/print_map.c\
 			  ./src/key_hook.c\
 			  ./src/move.c\
