@@ -6,7 +6,7 @@
 /*   By: mpons <marvin@42lausanne.ch>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 10:05:18 by mpons             #+#    #+#             */
-/*   Updated: 2022/01/03 20:38:49 by mpons            ###   ########.fr       */
+/*   Updated: 2022/01/06 19:27:17 by mpons            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../inc/so_long.h"
@@ -16,7 +16,7 @@ void	check_arg(int ac, char **av)
 	if (ac != 2)
 		print_error_exit("Error\nInvalid number of argument");
 	if (ft_strlen(av[1]) < 4 || (!ft_strchr(av[1], '.')))
-		print_error_exit("Invalid argument");
+		print_error_exit("Error\nInvalid argument");
 	if (ft_strncmp(ft_strrchr(av[1], '.'), ".ber", 4) != 0)
 		print_error_exit("Error\nInvalid map type");
 }

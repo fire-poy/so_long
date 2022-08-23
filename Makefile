@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mpons <marvin@42lausanne.ch>               +#+  +:+       +#+         #
+#    By: mpons <mpons@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/23 17:30:16 by mpons             #+#    #+#              #
-#    Updated: 2022/01/03 20:38:25 by mpons            ###   ########.fr        #
+#    Updated: 2022/08/23 16:57:20 by mpons            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= So_long
+NAME		= so_long
 
 CC			= gcc
-CFLAGS		= -Wall -Wextra -Werror -fsanitize=address
+CFLAGS		= -g3 -Wall -Wextra -Werror -fsanitize=address
 
 OBJS		= ${SRC:.c=.o}
 
@@ -39,7 +39,7 @@ all: $(NAME)
 
 $(NAME):	$(OBJS)
 			$(MAKE) -C $(LIBFT_DIR)
-			@$(MAKE) -C $(MLX_DIR)
+			@$(MAKE) -C $(MLX_DIR) 
 			$(CC) $(CFLAGS) -o $(NAME) $(INC) $(SRC) $(LIB)
 
 norm:

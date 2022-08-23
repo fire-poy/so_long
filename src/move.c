@@ -6,7 +6,7 @@
 /*   By: mpons <marvin@42lausanne.ch>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 11:24:31 by mpons             #+#    #+#             */
-/*   Updated: 2021/12/31 14:39:10 by mpons            ###   ########.fr       */
+/*   Updated: 2022/01/13 20:59:12 by mpons            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../inc/so_long.h"
@@ -63,6 +63,8 @@ void	move_up(t_map *m, t_game *g)
 	}
 }
 
+//on pourrait faire une seule fois tabcherche et apres garde position de P on 
+//g-x et g-y
 void	move_down(t_map *m, t_game *g)
 {
 	ft_tabchr(m->map, 'P', g);

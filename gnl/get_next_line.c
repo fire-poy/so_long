@@ -6,7 +6,7 @@
 /*   By: mpons <marvin@42lausanne.ch>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 16:25:34 by mpons             #+#    #+#             */
-/*   Updated: 2021/12/30 17:12:23 by mpons            ###   ########.fr       */
+/*   Updated: 2022/01/05 18:32:55 by mpons            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../inc/get_next_line.h"
@@ -16,12 +16,10 @@ char	*ft_read_save(int fd, char *str)
 {
 	char	*buf;
 	int		char_lu;
-	int		i;
 
 	buf = malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!buf)
 		return (NULL);
-	i = 0;
 	while (!ft_strchr(str, '\n'))
 	{
 		char_lu = read(fd, buf, BUFFER_SIZE);
